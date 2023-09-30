@@ -1,0 +1,110 @@
+---
+title: 'Automating Repetitive Tasks: Save Time With Programming'
+description: Maximize your time by leveraging the power of programming.
+image: '../../public/blogs/automate_programming.jpg'
+publishedAt: '2023-07-22'
+updatedAt: '2023-07-22'
+author: 'James'
+isPublished: true
+tags:
+  - Productivity
+  - Programming
+---
+
+Do you enjoy doing the same mind-numbing tasks over and over again?
+
+No? Well I've got a treat for you, stay tuned.
+
+> <b>Objective: </b> Automate simple administrative or analytical tasks. <br />
+> <b>Desired Outcome: </b> Spend more time doing meaningful work, reduce the chance
+> of error.
+
+Simple automation is possible either using a low/no code solution, EG: Power Automate,
+or a code-based approach, EG: Python script and Windows task scheduler.
+
+One valuable approach might be to read a file, scrape the contents for relevant input, then
+output that into an email, output file, or both. Using the requests library, you can leverage the power
+of a regex (regular expression) which allows for more sophisticated pattern matching.
+
+<i>A simplistic regex is as follows: </i>
+
+```
+import re
+
+phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+mo = phoneNumRegex.search('My number is 415-555-4242.')
+
+with open('output.txt','a') as f:
+  print('Phone number found: ' + mo.group(), file = f)
+```
+
+The assumption here is you are already working with a dataset or file.
+This will search as per the specified value(s), take the output and push it to the defined file.
+
+You create an object with the compile() method using a raw string, pass this string to the search method,
+giving you back a match object. Lastly, call the group() method and pass the output to your holding file to then take further action.
+
+---
+
+## How do you automate this?
+
+If you are a Windows user, the Task Scheduler is your best friend.
+You can use a batch file to easily set up your script to be auto-ran by the system at a defined time.
+Making a batch file is very straight-forward, but if you need guidance, check out this reference: https://datatofish.com/batch-python-script/.
+
+Make sure you set your task scheduler triggers as per your needs.
+
+## Here is another basic example
+
+```
+from datetime import datetime
+import os
+
+def write_file(filename, data):
+    if os.path.isfile(filename):
+        with open(filename, 'a') as f:
+            f.write('\n' + data)
+    else:
+        with open(filename, 'w') as f:
+            f.write(data)
+
+def print_time():
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    data = "Current Time = " + current_time
+    return data
+
+write_file('test.txt' , print_time())
+
+```
+
+## Using Other Libraries to Automate
+
+A very useful library for mundane administrative tasks or repetitive data analysis is Pandas.
+
+Essentially, you can read a CSV/Excel file, transform as per your needs, then spit the output out as
+another file or use it for something else.
+
+Pandas functions with dataframes, taking the inputted data and creating a table-esque structure (2D, 3D...).
+
+<Image
+  src="/blogs/automate/df.png"
+  width="718"
+  height="404"
+  alt="Image"
+  sizes="100vw"
+/>
+
+You can take this and adjust it as per your needs with a variety of built-in methods.
+
+To automate the process end-to-end, you add-in other libraries like OS to manipulate the operating system,
+Numpy for dealing with numbers, Glob for reading filepaths and PyWin32 to pull attachments from Outlook (always a classic!).
+
+Finish off by creating a script that will do something like send an email at a prescribed time with your outputted table and you are good to go.
+
+## Low/No-Code - Power Automate
+
+If you aren't comfortable coding and you would like to download an email attachment that you receive weekly,
+store it in a specific location on your disk and open it you can use Power Automate to assist.
+
+Microsoft offers a full walkthrough for beginners: https://learn.microsoft.com/en-us/power-automate/getting-started.
