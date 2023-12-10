@@ -77,7 +77,7 @@ const Header = () => {
           Home
         </Link>
         <Link
-          href="https://jkh-personal.web.app/"
+          href="https://jkh-personal.vercel.app/"
           className="mx-2"
           target="_blank"
         >
@@ -107,12 +107,16 @@ const Header = () => {
           Home
         </Link>
         <Link
-          href="https://jkh-personal.web.app/"
+          href="https://jkh-personal.vercel.app/"
           className="mx-2"
           target="_blank"
         >
           My Site
         </Link>
+        {/* 
+        !!! 
+        triggers light/dark 
+        */}
         <button
           onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
           className={cx(
