@@ -10,7 +10,12 @@ module.exports = {
     extend: {
       colors: {
         dark: '#1b1b1b',
-        light: '#fff',
+        // white
+        // light: '#fff',
+        // tan
+        light: '#f5ece3',
+        // light-green
+        // light: '#DAF7A6',
         accent: '#1b1b1b',
         accentDark: '#ffdb4d',
         gray: '#747474',
