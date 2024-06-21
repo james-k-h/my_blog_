@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import profileImg from '@/public/profile-img-1.png';
+import profileImg from '@/public/new_img_1.png';
 
 const Logo = () => {
   return (
@@ -15,9 +15,9 @@ const Logo = () => {
           priority
         />
       </div>
-      <span className="font-bold dark:font-semibold text-lg md:text-xl">
+      {/* <span className="font-bold dark:font-semibold text-lg md:text-xl">
         JKH
-      </span>
+      </span> */}
     </Link>
   );
 };
