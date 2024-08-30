@@ -77,7 +77,7 @@ const Header = () => {
           Home
         </Link>
         <Link
-          href="https://jkhoward.vercel.app/"
+          href="https://www.jameskhoward.com"
           className="mx-2"
           target="_blank"
         >
@@ -107,7 +107,7 @@ const Header = () => {
           Home
         </Link>
         <Link
-          href="https://jkhoward.vercel.app/"
+          href="https://www.jameskhoward.com"
           className="mx-2"
           target="_blank"
         >
